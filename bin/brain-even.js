@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import welcome from '../src/welcome.js';
-import greet from '../src/cli.js';
+import init from '../src/even.js';
 
 welcome();
 
-greet();
+init();
