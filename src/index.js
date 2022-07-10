@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import { welcome } from './utils.js';
 import even from './games/even.js';
 import calc from './games/calc.js';
+import gcd from './games/gcd.js';
 
 const gameRounds = 3;
 
@@ -20,6 +21,11 @@ const setGameParams = (game) => {
       task = calc.task;
       getQuestion = calc.getQuestion;
       getCorrectAnswer = calc.getCorrectAnswer;
+      break;
+    case 'gcd':
+      task = gcd.task;
+      getQuestion = gcd.getQuestion;
+      getCorrectAnswer = gcd.getCorrectAnswer;
       break;
     default:
       break;

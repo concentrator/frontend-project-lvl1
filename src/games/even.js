@@ -6,10 +6,8 @@ const getQuestion = () => getRandomNumber(100);
 
 const getCorrectAnswer = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-const even = {
+export default {
   task,
   getQuestion,
   getCorrectAnswer,
 };
-
-export default even;

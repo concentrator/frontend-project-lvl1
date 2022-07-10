@@ -34,10 +34,8 @@ const getCorrectAnswer = () => {
   return res.toString();
 };
 
-const calc = {
+export default {
   task,
   getQuestion,
   getCorrectAnswer,
 };
-
-export default calc;
