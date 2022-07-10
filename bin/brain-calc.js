@@ -2,6 +2,6 @@
 
 import init from '../src/index.js';
 
-const game = 'even';
+const game = 'calc';
 
 init(game);
