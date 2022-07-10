@@ -10,15 +10,11 @@ const showRules = () => {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
-const showQuestion = (number) => {
-    console.log(`Question: ${number}`);
-};
-
 const showCorrectAnswerMessage = () => {
     console.log('Correct!');
 }
 
-const showInorrectAnswerMessage = (answer, correctAnswer) => {
+const showIncorrectAnswerMessage = (answer, correctAnswer) => {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
 }
 
@@ -28,6 +24,10 @@ const showLossMessage = (name) => {
 
 const showWinMessage = (name) => {
     console.log(`Congratulations, ${name}`);
+};
+
+const showQuestion = (number) => {
+    console.log(`Question: ${number}`);
 };
 
 const getAnswer = () => readlineSync.question('Your answer: ');
@@ -50,7 +50,7 @@ const startGame = (name) => {
         const correctAnswer = getCorrectAnswer(number);
 
         if (!validateAnswer(answer, correctAnswer)) {
-            showInorrectAnswerMessage(answer, correctAnswer);
+            showIncorrectAnswerMessage(answer, correctAnswer);
             showLossMessage(name);
             return;
         }
