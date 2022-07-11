@@ -1,7 +1,32 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/concentrator/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/concentrator/frontend-project-lvl1/actions)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/d1e5a3e3d6c62d79b865/maintainability)](https://codeclimate.com/github/concentrator/frontend-project-lvl1/maintainability)
+
+## Setup
+
+```bash
+make install
+```
+
+## Run tests
+
+```bash
+make lint
+```
+
+## Run game
+
+```bash
+brain-even
+```
+
+## Games list
+
+- brain-even
+- brain-calc
+- brain-gcd
+- brain-progression
+- brain-prime
 
 [Install and play the Brain Even game](https://asciinema.org/a/NG2noTZrgbzlEit3aYBOK10wm)
 
