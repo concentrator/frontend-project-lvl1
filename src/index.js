@@ -1,32 +1,15 @@
 import welcome from './welcome.js';
-import even from './games/even.js';
-import calc from './games/calc.js';
-import gcd from './games/gcd.js';
-import progression from './games/progression.js';
-import prime from './games/prime.js';
 import * as app from './functions.js';
-
-const games = {
-  even,
-  calc,
-  gcd,
-  progression,
-  prime,
-};
+import * as games from './games/index.js';
 
 const gameRounds = 3;
-let task;
-let getQuestion;
 
-const setupGame = (game) => {
-  task = games[game].task;
-  getQuestion = games[game].getQuestion;
-};
+const selectGame = (gameName) => games[gameName];
 
-const startGame = (name) => {
-  app.showTask(task);
+const startGame = (game, name) => {
+  app.showTask(game.task);
   for (let i = 1; i <= gameRounds; i += 1) {
-    const [question, correctAnswer] = getQuestion();
+    const [question, correctAnswer] = game.getQuestion();
     app.showQuestion(question);
     const answer = app.getAnswer();
 
@@ -40,12 +23,12 @@ const startGame = (name) => {
   app.showWinMessage(name);
 };
 
-const init = (game) => {
+const init = (gameName) => {
   welcome();
+  const game = selectGame(gameName);
   const name = app.getName();
   app.greet(name);
-  setupGame(game);
-  startGame(name);
+  startGame(game, name);
 };
 
 export default init;
