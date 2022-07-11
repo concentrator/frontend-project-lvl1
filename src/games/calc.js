@@ -2,21 +2,9 @@ import { getRandomNumber } from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
-let number1;
-let number2;
-let operator;
-
 const task = 'What is the result of the expression?';
 
-const getQuestion = () => {
-  number1 = getRandomNumber(100);
-  number2 = getRandomNumber(100);
-  operator = operators[getRandomNumber(2)];
-
-  return `${number1} ${operator} ${number2}`;
-};
-
-const getCorrectAnswer = () => {
+const calc = (number1, number2, operator) => {
   let res;
   switch (operator) {
     case '+':
@@ -34,8 +22,16 @@ const getCorrectAnswer = () => {
   return res.toString();
 };
 
+const getQuestion = () => {
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
+  const operator = operators[getRandomNumber(0, 2)];
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = calc(number1, number2, operator);
+  return [question, answer];
+};
+
 export default {
   task,
   getQuestion,
-  getCorrectAnswer,
 };

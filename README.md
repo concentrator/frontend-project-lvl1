@@ -8,3 +8,5 @@
 [Play the Brain Calc game](https://asciinema.org/a/oBwCkcfErsdl3UYEUg4cUndkm)
 
 [Play the Brain GCD game](https://asciinema.org/a/qZ0JR2QKlhScLWay53aZ9Eg7t)
+
+[Play the Brain Progression game](https://asciinema.org/a/WTszBbfJGIVYCGiMVIOWbYAkd)
