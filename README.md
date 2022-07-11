@@ -8,6 +8,10 @@
 make install
 ```
 
+```bash
+sudo npm link
+```
+
 ## Run tests
 
 ```bash
