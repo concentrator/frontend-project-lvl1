@@ -12,11 +12,16 @@ export const getGcd = (a, b) => {
 export const getProgression = (start, length, step) => {
   let acc = start;
   const res = [start];
-
   for (let i = 1; i < length; i += 1) {
     acc += step;
     res.push(acc);
   }
-
   return res;
+};
+
+export const isPrime = (number) => {
+  for (let i = 2; i < number / 2; i += 1) {
+    if (number % i === 0) return false;
+  }
+  return true;
 };
