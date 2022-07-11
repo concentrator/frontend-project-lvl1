@@ -25,3 +25,28 @@ export const isPrime = (number) => {
   }
   return true;
 };
+
+export const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+  return false;
+};
+
+export const calc = (number1, number2, operator) => {
+  let res;
+  switch (operator) {
+    case '+':
+      res = number1 + number2;
+      break;
+    case '-':
+      res = number1 - number2;
+      break;
+    case '*':
+      res = number1 * number2;
+      break;
+    default:
+      break;
+  }
+  return res;
+};
