@@ -1,33 +1,35 @@
-import welcome from './welcome.js';
-import * as app from './functions.js';
+import readlineSync from 'readline-sync';
 import * as games from './games/index.js';
 
 const gameRounds = 3;
 
+export const getName = () => readlineSync.question('May I have your name? ');
+export const getAnswer = () => readlineSync.question('Your answer: ');
+
 const selectGame = (gameName) => games[gameName];
 
 const startGame = (game, name) => {
-  app.showTask(game.task);
+  console.log(game.task);
   for (let i = 1; i <= gameRounds; i += 1) {
-    const [question, correctAnswer] = game.getQuestion();
-    app.showQuestion(question);
-    const answer = app.getAnswer();
+    const [question, correctAnswer] = game.getRound();
+    console.log(`Question: ${question}`);
+    const answer = getAnswer();
 
-    if (!app.validateAnswer(answer, correctAnswer)) {
-      app.showIncorrectAnswerMessage(answer, correctAnswer);
-      app.showLossMessage(name);
+    if (answer !== correctAnswer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
-    app.showCorrectAnswerMessage();
+    console.log('Correct!');
   }
-  app.showWinMessage(name);
+  console.log(`Congratulations, ${name}!`);
 };
 
 const init = (gameName) => {
-  welcome();
+  console.log('Welcome to the Brain Games!');
   const game = selectGame(gameName);
-  const name = app.getName();
-  app.greet(name);
+  const name = getName();
+  console.log(`Hello, ${name}!`);
   startGame(game, name);
 };
 

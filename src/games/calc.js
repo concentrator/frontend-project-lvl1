@@ -1,8 +1,26 @@
-import { getRandomNumber, calc } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const task = 'What is the result of the expression?';
 
-const getQuestion = () => {
+const calc = (number1, number2, operator) => {
+  let res;
+  switch (operator) {
+    case '+':
+      res = number1 + number2;
+      break;
+    case '-':
+      res = number1 - number2;
+      break;
+    case '*':
+      res = number1 * number2;
+      break;
+    default:
+      break;
+  }
+  return res;
+};
+
+const getRound = () => {
   const operators = ['+', '-', '*'];
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
@@ -14,5 +32,5 @@ const getQuestion = () => {
 
 export default {
   task,
-  getQuestion,
+  getRound,
 };

@@ -1,8 +1,15 @@
-import { getRandomNumber, isEven } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getQuestion = () => {
+const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+  return false;
+};
+
+const getRound = () => {
   const number = getRandomNumber(1, 100);
   const question = number;
   const answer = isEven(number) ? 'yes' : 'no';
@@ -11,5 +18,5 @@ const getQuestion = () => {
 
 export default {
   task,
-  getQuestion,
+  getRound,
 };

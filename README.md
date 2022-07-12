@@ -1,5 +1,12 @@
+# Brain Games
+
+## Project state
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/concentrator/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/concentrator/frontend-project-lvl1/actions)
+
+### Maintainability
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/d1e5a3e3d6c62d79b865/maintainability)](https://codeclimate.com/github/concentrator/frontend-project-lvl1/maintainability)
 
 ## Setup
@@ -21,7 +28,7 @@ make lint
 ## Run game
 
 ```bash
-brain-even
+brain-<game-name>
 ```
 
 ## Games list
