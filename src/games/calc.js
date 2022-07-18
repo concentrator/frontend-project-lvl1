@@ -1,8 +1,9 @@
 import getRandomNumber from '../utils.js';
+import init from '../index.js';
 
-const task = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const calc = (number1, number2, operator) => {
+const evaluateExpression = (number1, number2, operator) => {
   let res;
   switch (operator) {
     case '+':
@@ -15,22 +16,30 @@ const calc = (number1, number2, operator) => {
       res = number1 * number2;
       break;
     default:
-      break;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
   return res;
 };
 
-const getRound = () => {
-  const operators = ['+', '-', '*'];
-  const number1 = getRandomNumber(1, 100);
-  const number2 = getRandomNumber(1, 100);
-  const operator = operators[getRandomNumber(0, 2)];
+const minNumber = 1;
+const maxNumber = 100;
+const operators = ['+', '-', '*'];
+
+const getRoundData = () => {
+  const operatorsMaxIndex = operators.length - 1;
+  const number1 = getRandomNumber(minNumber, maxNumber);
+  const number2 = getRandomNumber(minNumber, maxNumber);
+  const operator = operators[getRandomNumber(0, operatorsMaxIndex)];
   const question = `${number1} ${operator} ${number2}`;
-  const answer = calc(number1, number2, operator).toString();
+  const answer = evaluateExpression(number1, number2, operator).toString();
   return [question, answer];
 };
 
-export default {
-  task,
-  getRound,
+const gameData = {
+  description,
+  getRoundData,
+};
+
+export default () => {
+  init(gameData);
 };

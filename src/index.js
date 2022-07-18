@@ -1,19 +1,13 @@
 import readlineSync from 'readline-sync';
-import * as games from './games/index.js';
 
-const gameRounds = 3;
+const gameRoundsCount = 3;
 
-export const getName = () => readlineSync.question('May I have your name? ');
-export const getAnswer = () => readlineSync.question('Your answer: ');
-
-const selectGame = (gameName) => games[gameName];
-
-const startGame = (game, name) => {
-  console.log(game.task);
-  for (let i = 1; i <= gameRounds; i += 1) {
-    const [question, correctAnswer] = game.getRound();
+const startGame = (gameData, name) => {
+  console.log(gameData.description);
+  for (let i = 1; i <= gameRoundsCount; i += 1) {
+    const [question, correctAnswer] = gameData.getRoundData();
     console.log(`Question: ${question}`);
-    const answer = getAnswer();
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
@@ -25,12 +19,11 @@ const startGame = (game, name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const init = (gameName) => {
+const init = (gameData) => {
   console.log('Welcome to the Brain Games!');
-  const game = selectGame(gameName);
-  const name = getName();
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  startGame(game, name);
+  startGame(gameData, name);
 };
 
 export default init;
