@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/concentrator/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/concentrator/frontend-project-lvl1/actions)",
+  "description": "Hexlet training project. Set of mathematical games running in a command line interface (CLI)",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -32,5 +32,9 @@
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0"
+  },
+  "engines" : {
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
   }
 }
